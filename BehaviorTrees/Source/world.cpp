@@ -109,7 +109,7 @@ void World::Initialize( CMultiAnim *pMA, std::vector< CTiny* > *pv_pChars, CSoun
 	//doctor
 	//Create game objects
 	char name[10] = "Doctor";
-	GameObject* npc = new GameObject( g_database.GetNewObjectID(), OBJECT_NPC, name );
+	GameObject* npc = new GameObject( g_database.GetNewObjectID(), OBJECT_Player, name );
 	D3DXVECTOR3 pos(0.0f, 0.0f, 0.0f);
 	pos.x = g_random.RangeFloat();
 	pos.z = g_random.RangeFloat();

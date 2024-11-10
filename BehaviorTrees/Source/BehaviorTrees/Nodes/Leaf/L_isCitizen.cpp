@@ -11,6 +11,25 @@ namespace BT
 
 	Status L_isCitizen::OnEnter(NodeData* nodedata_ptr)
 	{
+		//When get GO itself
+		AgentBTData& agentdata = nodedata_ptr->GetAgentData();
+		GameObject* self = agentdata.GetGameObject();
+		//When Get All Go
+		AgentBTDataList& agentlist = g_trees.GetAllAgentsBTData();
+		for (auto& it : agentlist)
+		{
+			GameObject* go = it->GetGameObject();
+			//get go's ID, Name, Loc
+			objectID go_id = go->GetID();
+			std::string go_name = go->GetName();
+			float go_x = go->GetTargetPOS().x;
+			float go_y = go->GetTargetPOS().y;
+			float go_z = go->GetTargetPOS().z;
+			//set Loc, Tiny's Col
+			go->SetTargetPOS({ 0,0,0 });
+			go->GetTiny().SetDiffuse(1.0f, 1.0f, 1.0f);
+		}
+
 		return Status::BT_READY;
 	}
 
@@ -20,6 +39,13 @@ namespace BT
 
 	Status L_isCitizen::OnUpdate(float dt, NodeData* nodedata_ptr)
 	{
+		bool isCitizen = false;
+		AgentBTDataList& agentlist = g_trees.GetAllAgentsBTData();
+		for (auto& it : agentlist)
+		{
+			GameObject* go = it->GetGameObject();
+
+		}
 		return Status::BT_RUNNING;
 	}
 

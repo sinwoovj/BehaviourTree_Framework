@@ -14,9 +14,9 @@
 #define OBJECT_Ignore_Type  (0)
 #define OBJECT_Gameflow     (1<<1)
 #define OBJECT_Character    (1<<2)
-#define OBJECT_NPC          (1<<3)
-#define OBJECT_Player       (1<<4)
-#define OBJECT_Enemy        (1<<5)
+#define OBJECT_NPC          (1<<3) // = Citizen
+#define OBJECT_Player       (1<<4) // = Doctor
+#define OBJECT_Enemy        (1<<5) // = Infectee
 #define OBJECT_Weapon       (1<<6)
 #define OBJECT_Item         (1<<7)
 #define OBJECT_Projectile   (1<<8)
@@ -39,7 +39,9 @@ public:
 
 	inline objectID GetID(void)					{ return(m_id); }
 	inline unsigned int GetType(void)				{ return(m_type); }
+	inline void SetType(unsigned int t)				{ m_type = t; }
 	inline char* GetName(void)					{ return(m_name); }
+	inline void SetName(char* n)					{ strcpy(m_name, n); }
 
 	void Initialize(void);
 	void Update(void);
