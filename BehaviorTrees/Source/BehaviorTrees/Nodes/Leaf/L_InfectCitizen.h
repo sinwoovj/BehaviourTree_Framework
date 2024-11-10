@@ -1,9 +1,9 @@
 /******************************************************************************/
 /*!
-\file		L_NewNode.h
+\file		L_InfectCitizen.h
 \project	CS380/CS580 AI Framework
 \author		Shin-woo Choi
-\summary	Action: Move to a random point.
+\summary	Action: Infect Citizen.
 
 Copyright (C) 2016 DigiPen Institute of Technology.
 Reproduction or disclosure of this file or its contents without the prior
@@ -18,7 +18,7 @@ written consent of DigiPen Institute of Technology is prohibited.
 namespace BT
 {
 	// selector node
-	class L_NewNode : public LeafNode
+	class L_InfectCitizen : public LeafNode
 	{
 	protected:
 		// Only run when initializing the node

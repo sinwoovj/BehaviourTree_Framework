@@ -214,9 +214,16 @@
     <ClCompile Include="Source\BehaviorTrees\BlackBoards\TinyBlackBoard.cpp">
       <Filter>BehaviorTrees\BlackBoards</Filter>
     </ClCompile>
-    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_NewNode.cpp">
-      <Filter>BehaviorTrees\Nodes\Leaf</Filter>
-    </ClCompile>
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_CureInfectee.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_FailureState.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_InfectCitizen.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_infected.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_isCitizen.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_isCollideToCitizen.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_isCollideToInfectee.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_isInfectee.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_MoveToClosestCitizen.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_SucessState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\MultiAnimation.h" />
@@ -449,9 +456,16 @@
     <ClInclude Include="Source\BehaviorTrees\BlackBoards\TinyBlackBoard.h">
       <Filter>BehaviorTrees\BlackBoards</Filter>
     </ClInclude>
-    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_NewNode.h">
-      <Filter>BehaviorTrees\Nodes\Leaf</Filter>
-    </ClInclude>
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_CureInfectee.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_FailureState.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_InfectCitizen.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_infected.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_isCitizen.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_isCollideToCitizen.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_isCollideToInfectee.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_isInfectee.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_MoveToClosestCitizen.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_SucessState.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Animation">

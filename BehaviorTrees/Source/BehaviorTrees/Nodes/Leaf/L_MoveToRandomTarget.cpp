@@ -45,7 +45,7 @@ Status L_MoveToRandomTarget::OnEnter(NodeData *nodedata_ptr)
 	LeafNode::OnEnter(nodedata_ptr);
 
 	GameObject *self = nodedata_ptr->GetAgentData().GetGameObject();
-
+	
 	self->SetTargetPOS(RandomPosition());
 	self->SetSpeedStatus(TinySpeedStatus::TS_WALK);
 	SetTinySpeed(self);

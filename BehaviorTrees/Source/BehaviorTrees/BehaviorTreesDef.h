@@ -53,9 +53,20 @@ written consent of DigiPen Institute of Technology is prohibited.
 
 /* Leaf Nodes */
 
+#include <BehaviorTrees/Nodes/Leaf/L_MoveToFurthestTarget.h>
+
 #include <BehaviorTrees/Nodes/Leaf/L_CheckMouseClick.h>
 #include <BehaviorTrees/Nodes/Leaf/L_Idle.h>
-#include <BehaviorTrees/Nodes/Leaf/L_MoveToFurthestTarget.h>
 #include <BehaviorTrees/Nodes/Leaf/L_MoveToMouseTarget.h>
 #include <BehaviorTrees/Nodes/Leaf/L_MoveToRandomTarget.h>
-#include <BehaviorTrees/Nodes/Leaf/L_NewNode.h>
+
+#include <BehaviorTrees/Nodes/Leaf/L_isInfectee.h>
+#include <BehaviorTrees/Nodes/Leaf/L_isCitizen.h>
+#include <BehaviorTrees/Nodes/Leaf/L_isCollideToInfectee.h>
+#include <BehaviorTrees/Nodes/Leaf/L_isCollideToCitizen.h>
+#include <BehaviorTrees/Nodes/Leaf/L_infected.h>
+#include <BehaviorTrees/Nodes/Leaf/L_CureInfectee.h>
+#include <BehaviorTrees/Nodes/Leaf/L_InfectCitizen.h>
+#include <BehaviorTrees/Nodes/Leaf/L_MoveToClosestCitizen.h>
+#include <BehaviorTrees/Nodes/Leaf/L_SucessState.h>
+#include <BehaviorTrees/Nodes/Leaf/L_FailureState.h>

@@ -129,7 +129,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_NewNode.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_CureInfectee.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_FailureState.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_InfectCitizen.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_infected.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_isCitizen.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_isCollideToCitizen.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_isCollideToInfectee.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_isInfectee.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_MoveToClosestCitizen.cpp" />
     <ClCompile Include="Source\AllocHierarchy.cpp" />
     <ClCompile Include="Source\AnimationInstance.cpp" />
     <ClCompile Include="Source\BehaviorTreeEditor.cpp">
@@ -161,6 +169,7 @@
     <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_MoveToFurthestTarget.cpp" />
     <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_MoveToMouseTarget.cpp" />
     <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_MoveToRandomTarget.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_SucessState.cpp" />
     <ClCompile Include="Source\BehaviorTrees\Nodes\ParallelNode.cpp" />
     <ClCompile Include="Source\BehaviorTrees\Nodes\RepeaterNode.cpp" />
     <ClCompile Include="Source\BehaviorTrees\TreeLogic.cpp" />
@@ -281,7 +290,15 @@
     <ClCompile Include="Source\world.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_NewNode.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_CureInfectee.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_FailureState.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_InfectCitizen.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_infected.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_isCitizen.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_isCollideToCitizen.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_isCollideToInfectee.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_isInfectee.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_MoveToClosestCitizen.h" />
     <ClInclude Include="Source\AIReasoner.h" />
     <ClInclude Include="Source\BehaviorTrees\AgentBehaviors.h" />
     <ClInclude Include="Source\BehaviorTrees\AgentBTData.h" />
@@ -309,6 +326,7 @@
     <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_MoveToFurthestTarget.h" />
     <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_MoveToMouseTarget.h" />
     <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_MoveToRandomTarget.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_SucessState.h" />
     <ClInclude Include="Source\BehaviorTrees\Nodes\ParallelNode.h" />
     <ClInclude Include="Source\BehaviorTrees\Nodes\RepeaterNode.h" />
     <ClInclude Include="Source\BehaviorTrees\TreeLogic.h" />
