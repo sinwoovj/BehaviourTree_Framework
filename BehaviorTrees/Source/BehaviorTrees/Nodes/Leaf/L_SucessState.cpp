@@ -11,7 +11,7 @@ namespace BT
 
 	Status L_SucessState::OnEnter(NodeData* nodedata_ptr)
 	{
-		return Status::BT_READY;
+		return Status::BT_SUCCESS;
 	}
 
 	void L_SucessState::OnExit(NodeData* nodedata_ptr)

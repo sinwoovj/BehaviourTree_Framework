@@ -11,7 +11,8 @@ namespace BT
 
 	Status L_CureInfectee::OnEnter(NodeData* nodedata_ptr)
 	{
-		return Status::BT_READY;
+
+		return Status::BT_SUCCESS;
 	}
 
 	void L_CureInfectee::OnExit(NodeData* nodedata_ptr)

@@ -84,6 +84,7 @@ public:
 	void SetHasBehaviorTreeFlag(bool flag)			{ m_hasBehaviorTree = flag; }
 
 	// added for Behavior tree (Chi-Hao) END
+	std::vector<GameObject*> collideObj;
 
 private:
 	friend void PushText(objectID, std::string);

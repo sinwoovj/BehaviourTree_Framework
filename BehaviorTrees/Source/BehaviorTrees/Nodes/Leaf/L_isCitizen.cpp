@@ -31,15 +31,6 @@ namespace BT
 			go->GetTiny().SetDiffuse(1.0f, 1.0f, 1.0f);
 		}
 		*/
-		return Status::BT_READY;
-	}
-
-	void L_isCitizen::OnExit(NodeData* nodedata_ptr)
-	{
-	}
-
-	Status L_isCitizen::OnUpdate(float dt, NodeData* nodedata_ptr)
-	{
 		AgentBTDataList& agentlist = g_trees.GetAllAgentsBTData();
 		for (auto& it : agentlist)
 		{
@@ -48,6 +39,15 @@ namespace BT
 				return Status::BT_SUCCESS;
 		}
 		return Status::BT_FAILURE;
+	}
+
+	void L_isCitizen::OnExit(NodeData* nodedata_ptr)
+	{
+	}
+
+	Status L_isCitizen::OnUpdate(float dt, NodeData* nodedata_ptr)
+	{
+		return BT_RUNNING;
 	}
 
 	Status L_isCitizen::OnSuspend(NodeData* nodedata_ptr)

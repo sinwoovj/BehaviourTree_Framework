@@ -11,15 +11,6 @@ namespace BT
 
 	Status L_isInfectee::OnEnter(NodeData* nodedata_ptr)
 	{
-		return Status::BT_READY;
-	}
-
-	void L_isInfectee::OnExit(NodeData* nodedata_ptr)
-	{
-	}
-
-	Status L_isInfectee::OnUpdate(float dt, NodeData* nodedata_ptr)
-	{
 		AgentBTDataList& agentlist = g_trees.GetAllAgentsBTData();
 		for (auto& it : agentlist)
 		{
@@ -28,6 +19,15 @@ namespace BT
 				return Status::BT_SUCCESS;
 		}
 		return Status::BT_FAILURE;
+	}
+
+	void L_isInfectee::OnExit(NodeData* nodedata_ptr)
+	{
+	}
+
+	Status L_isInfectee::OnUpdate(float dt, NodeData* nodedata_ptr)
+	{
+		return Status::BT_RUNNING;
 	}
 
 	Status L_isInfectee::OnSuspend(NodeData* nodedata_ptr)

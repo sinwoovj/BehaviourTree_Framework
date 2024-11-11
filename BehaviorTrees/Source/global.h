@@ -29,6 +29,8 @@ enum TinySpeedStatus
 {
 	TS_JOG,
 	TS_WALK,
+	TS_JOG2,
+	TS_WALK2,
 	TS_IDLE,
 };
 

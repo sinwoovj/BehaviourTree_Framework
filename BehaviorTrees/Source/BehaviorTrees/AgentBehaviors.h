@@ -22,8 +22,10 @@ namespace BT
 
 	GameObject *GetNearestCitizen(GameObject *npc);
 
+	float GetDistance(GameObject* self, GameObject* target);
+
 	// Check if the target is near the position.
-	bool IsNear(const D3DXVECTOR3 &pos, const D3DXVECTOR3 &target, float nearDist = 1.0f / 100.0f);
+	bool IsNear(const D3DXVECTOR3 &pos, const D3DXVECTOR3 &target, float nearDist = 1.0f / 50.0f);
 
 	// Return random position.
 	D3DXVECTOR3 RandomPosition(void);

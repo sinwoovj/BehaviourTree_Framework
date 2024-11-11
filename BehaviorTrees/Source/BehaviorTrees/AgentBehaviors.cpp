@@ -116,6 +116,25 @@ GameObject* BT::GetNearestCitizen(GameObject* npc)
 }
 
 /*--------------------------------------------------------------------------*
+Name:           GetDistance
+
+Description:    Get distance object between object.
+
+Arguments:      object, object:	self, target.
+
+Returns:        float:	distance of the between objects.
+*---------------------------------------------------------------------------*/
+
+float BT::GetDistance(GameObject* self, GameObject* target)
+{
+	D3DXVECTOR3 tarPos = target->GetBody().GetPos();
+	D3DXVECTOR3 myPos = self->GetBody().GetPos();
+	D3DXVECTOR3 diff = tarPos - myPos;
+	float distance = D3DXVec3Length(&diff);
+	return distance;
+}
+
+/*--------------------------------------------------------------------------*
 Name:           IsNear
 
 Description:    Check if the target is near the position.
@@ -178,6 +197,20 @@ void BT::SetTinySpeed(GameObject *npc)
 	case TinySpeedStatus::TS_WALK:
 	{
 		npc->GetMovement().SetWalkSpeed();
+		npc->GetMovement().SetTarget(npc->GetTargetPOS());
+	}
+		break;
+		
+	case TinySpeedStatus::TS_JOG2:
+	{
+		npc->GetMovement().SetJogSpeed2();
+		npc->GetMovement().SetTarget(npc->GetTargetPOS());
+	}
+		break;
+
+	case TinySpeedStatus::TS_WALK2:
+	{
+		npc->GetMovement().SetWalkSpeed2();
 		npc->GetMovement().SetTarget(npc->GetTargetPOS());
 	}
 		break;

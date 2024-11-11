@@ -130,6 +130,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_CureInfectee.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_doctored.cpp" />
     <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_FailureState.cpp" />
     <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_InfectCitizen.cpp" />
     <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_infected.cpp" />
@@ -291,6 +292,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_CureInfectee.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_doctored.h" />
     <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_FailureState.h" />
     <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_InfectCitizen.h" />
     <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_infected.h" />
@@ -478,6 +480,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">true</ExcludedFromBuild>
     </None>
+    <None Include="BTResources\VirusSimulator.bht" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

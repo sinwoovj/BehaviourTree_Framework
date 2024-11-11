@@ -11,7 +11,8 @@ namespace BT
 
 	Status L_InfectCitizen::OnEnter(NodeData* nodedata_ptr)
 	{
-		return Status::BT_READY;
+
+		return Status::BT_SUCCESS;
 	}
 
 	void L_InfectCitizen::OnExit(NodeData* nodedata_ptr)

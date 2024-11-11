@@ -13,13 +13,27 @@ written consent of DigiPen Institute of Technology is prohibited.
 
 #pragma once
 
+#include <vector>
 #include <BehaviorTrees/BehaviorTreesShared.h>
 
 namespace BT
 {
+	// node data for L_isCollideToInfectee, InfectCitizen
+	struct L_CollideToInfecteeData : public NodeAbstractData
+	{
+		std::vector<GameObject*> collideInfectee;		// collided infectee to doctor
+	};
+
 	// selector node
 	class L_isCollideToInfectee : public LeafNode
 	{
+	public:
+		// Get custom data.
+		L_CollideToInfecteeData* GetLocalBlackBoard(NodeData* nodedata_ptr);
+
+		// Initial custom data.
+		void InitialLocalBlackBoard(NodeData* nodedata_ptr);
+
 	protected:
 		// Only run when initializing the node
 		virtual void OnInitial(NodeData* nodedata_ptr) override;

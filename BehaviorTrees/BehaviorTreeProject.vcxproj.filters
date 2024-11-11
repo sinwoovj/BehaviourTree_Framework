@@ -224,6 +224,7 @@
     <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_isInfectee.cpp" />
     <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_MoveToClosestCitizen.cpp" />
     <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_SucessState.cpp" />
+    <ClCompile Include="Source\BehaviorTrees\Nodes\Leaf\L_doctored.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\MultiAnimation.h" />
@@ -466,6 +467,7 @@
     <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_isInfectee.h" />
     <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_MoveToClosestCitizen.h" />
     <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_SucessState.h" />
+    <ClInclude Include="Source\BehaviorTrees\Nodes\Leaf\L_doctored.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Animation">
@@ -542,5 +544,6 @@
     <None Include="BTResources\Nodes.def">
       <Filter>BehaviorTrees\BTResources</Filter>
     </None>
+    <None Include="BTResources\VirusSimulator.bht" />
   </ItemGroup>
 </Project>

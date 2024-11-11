@@ -19,7 +19,7 @@ namespace BT
 		if (nearest)
 		{
 			self->SetTargetPOS(nearest->GetBody().GetPos());
-			self->SetSpeedStatus(TinySpeedStatus::TS_JOG);
+			self->SetSpeedStatus(TinySpeedStatus::TS_JOG2);
 			SetTinySpeed(self);
 
 			return Status::BT_RUNNING;

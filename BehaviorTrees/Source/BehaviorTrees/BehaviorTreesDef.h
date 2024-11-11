@@ -65,6 +65,7 @@ written consent of DigiPen Institute of Technology is prohibited.
 #include <BehaviorTrees/Nodes/Leaf/L_isCollideToInfectee.h>
 #include <BehaviorTrees/Nodes/Leaf/L_isCollideToCitizen.h>
 #include <BehaviorTrees/Nodes/Leaf/L_infected.h>
+#include <BehaviorTrees/Nodes/Leaf/L_doctored.h>
 #include <BehaviorTrees/Nodes/Leaf/L_CureInfectee.h>
 #include <BehaviorTrees/Nodes/Leaf/L_InfectCitizen.h>
 #include <BehaviorTrees/Nodes/Leaf/L_MoveToClosestCitizen.h>

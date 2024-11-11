@@ -1,1 +1,3 @@
-#include "../BTResources/VirusSimulator.bht"
+#include "../BTResources/VirusSimulatorEx.bht"
+#include "../BTResources/VirusSimulatorN.bht"
+#include "../BTResources/VirusSimulatorP.bht"

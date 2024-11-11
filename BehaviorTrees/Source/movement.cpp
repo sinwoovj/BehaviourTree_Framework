@@ -13,7 +13,9 @@
 Movement::Movement( GameObject& owner )
 : m_owner( &owner ),
   m_speedWalk( 1.f / 5.7f ),
-  m_speedJog( 1.f / 2.3f )
+  m_speedJog( 1.f / 2.3f ),
+  m_speedWalk2( 1.f / 11.4f ),
+  m_speedJog2( 1.f / 5.7f )
 {
 	m_target.x = m_target.y = m_target.z = 0.0f;
 }
@@ -73,8 +75,20 @@ void Movement::SetWalkSpeed( void )
 	m_owner->GetTiny().SetMoveKey();
 }
 
+void Movement::SetWalkSpeed2( void )
+{
+	m_owner->GetBody().SetSpeed( m_speedWalk2 );
+	m_owner->GetTiny().SetMoveKey();
+}
+
 void Movement::SetJogSpeed( void )
 {
 	m_owner->GetBody().SetSpeed( m_speedJog );
+	m_owner->GetTiny().SetMoveKey();
+}
+
+void Movement::SetJogSpeed2( void )
+{
+	m_owner->GetBody().SetSpeed( m_speedJog2 );
 	m_owner->GetTiny().SetMoveKey();
 }

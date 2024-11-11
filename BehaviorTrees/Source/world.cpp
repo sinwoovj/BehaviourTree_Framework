@@ -87,39 +87,58 @@ void World::Initialize( CMultiAnim *pMA, std::vector< CTiny* > *pv_pChars, CSoun
 #else
 		g_trees.Initialize();		// initialize behavior tree
 
-	//citizen | infectee
-	for( int i=0; i<9; i++ )
+	//citizen
+	for( int i=0; i<8; i++ )
 	{
 		//Create game objects
-		char name[20] = "Citizen/Infectee";
-		sprintf( name, "%s%d", name, i );
-		GameObject* npc = new GameObject( g_database.GetNewObjectID(), OBJECT_NPC, name );
+		char name[20] = "Citizen";
+		sprintf( name, "%s%d", name, i );		
+		GameObject* npc = new GameObject(g_database.GetNewObjectID(), OBJECT_NPC, name);
 		D3DXVECTOR3 pos(0.0f, 0.0f, 0.0f);
 		pos.x = g_random.RangeFloat();
 		pos.z = g_random.RangeFloat();
-		npc->CreateBody( 100, pos );
+		npc->CreateBody(100, pos);
 		npc->CreateMovement();
-		npc->CreateTiny( pMA, pv_pChars, pSM, dTimeCurrent, 1.0f, 1.0f, 1.0f );	//Color if needed
-		g_database.Store( *npc );
+		npc->CreateTiny(pMA, pv_pChars, pSM, dTimeCurrent, 1.0f, 1.0f, 1.0f);	//Color if needed
+		g_database.Store(*npc);
 
-		g_trees.Register(name, "VirusSimulator");					// register agent to behavior tree
+		g_trees.Register(name, "VirusSimulatorN");					// register agent to behavior tree
 		g_trees.GetAgentData(name).InitialTinyBlackBoard(npc);		// initialize local blackboard for each tiny
 	}
+	
+	{
+		//Infectee
+		//Create game objects
+		char i_name[20] = "Infectee";
+		GameObject* i_npc = new GameObject(g_database.GetNewObjectID(), OBJECT_Enemy, i_name);
+		D3DXVECTOR3 i_pos(0.0f, 0.0f, 0.0f);
+		i_pos.x = g_random.RangeFloat();
+		i_pos.z = g_random.RangeFloat();
+		i_npc->CreateBody(100, i_pos);
+		i_npc->CreateMovement();
+		i_npc->CreateTiny(pMA, pv_pChars, pSM, dTimeCurrent, 1.0f, 0.0f, 0.0f);	//Color if needed
+		g_database.Store(*i_npc);
 
-	//doctor
-	//Create game objects
-	char name[10] = "Doctor";
-	GameObject* npc = new GameObject( g_database.GetNewObjectID(), OBJECT_Player, name );
-	D3DXVECTOR3 pos(0.0f, 0.0f, 0.0f);
-	pos.x = g_random.RangeFloat();
-	pos.z = g_random.RangeFloat();
-	npc->CreateBody( 100, pos );
-	npc->CreateMovement();
-	npc->CreateTiny( pMA, pv_pChars, pSM, dTimeCurrent, 0.0f, 0.0f, 1.0f );	//Color if needed
-	g_database.Store( *npc );
+		g_trees.Register(i_name, "VirusSimulatorN");					// register agent to behavior tree
+		g_trees.GetAgentData(i_name).InitialTinyBlackBoard(i_npc);		// initialize local blackboard for each tiny
+	}
 
-	g_trees.Register(name, "VirusSimulator");					// register agent to behavior tree
-	g_trees.GetAgentData(name).InitialTinyBlackBoard(npc);		// initialize local blackboard for each tiny
+	{
+		//doctor
+		//Create game objects
+		char d_name[20] = "Doctor";
+		GameObject* d_npc = new GameObject(g_database.GetNewObjectID(), OBJECT_Player, d_name);
+		D3DXVECTOR3 d_pos(0.0f, 0.0f, 0.0f);
+		d_pos.x = g_random.RangeFloat();
+		d_pos.z = g_random.RangeFloat();
+		d_npc->CreateBody(100, d_pos);
+		d_npc->CreateMovement();
+		d_npc->CreateTiny(pMA, pv_pChars, pSM, dTimeCurrent, 0.0f, 0.0f, 1.0f);	//Color if needed
+		g_database.Store(*d_npc);
+
+		g_trees.Register(d_name, "VirusSimulatorP");					// register agent to behavior tree
+		g_trees.GetAgentData(d_name).InitialTinyBlackBoard(d_npc);		// initialize local blackboard for each tiny
+	}
 
 #endif
 

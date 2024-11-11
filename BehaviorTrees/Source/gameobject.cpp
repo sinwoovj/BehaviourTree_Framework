@@ -16,7 +16,8 @@ GameObject::GameObject( objectID id, unsigned int type, char* name )
   m_body(0),
   m_movement(0),
   m_tiny(0),
-  m_targetPOS(0,0,0)
+  m_targetPOS(0,0,0),
+  collideObj({})
 {
 	m_id = id;
 	m_type = type;
@@ -48,6 +49,7 @@ GameObject::~GameObject( void )
 	{
 		delete m_tiny;
 	}
+	collideObj.clear();
 }
 
 void GameObject::CreateStateMachineManager( void )

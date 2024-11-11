@@ -122,7 +122,10 @@ Status L_Idle::OnEnter(NodeData *nodedata_ptr)
 	self->SetSpeedStatus(TinySpeedStatus::TS_IDLE);
 	SetTinySpeed(self);
 
-	SetRandomTimer(nodedata_ptr);
+	if(self->GetType() == OBJECT_Player)
+		SetRandomTimer(nodedata_ptr, 0, 0);
+	else
+		SetRandomTimer(nodedata_ptr);
 
 	return Status::BT_RUNNING;
 }

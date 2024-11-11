@@ -27,6 +27,8 @@ public:
 	void SetIdleSpeed( void );
 	void SetWalkSpeed( void );
 	void SetJogSpeed( void );
+	void SetWalkSpeed2( void );
+	void SetJogSpeed2( void );
 
 
 
@@ -35,5 +37,7 @@ public:
 	D3DXVECTOR3 m_target;
 	float m_speedWalk;
 	float m_speedJog;
+	float m_speedWalk2;
+	float m_speedJog2;
 
 };
