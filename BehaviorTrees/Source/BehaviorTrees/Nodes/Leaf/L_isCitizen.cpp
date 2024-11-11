@@ -11,6 +11,7 @@ namespace BT
 
 	Status L_isCitizen::OnEnter(NodeData* nodedata_ptr)
 	{
+		/*
 		//When get GO itself
 		AgentBTData& agentdata = nodedata_ptr->GetAgentData();
 		GameObject* self = agentdata.GetGameObject();
@@ -29,7 +30,7 @@ namespace BT
 			go->SetTargetPOS({ 0,0,0 });
 			go->GetTiny().SetDiffuse(1.0f, 1.0f, 1.0f);
 		}
-
+		*/
 		return Status::BT_READY;
 	}
 
@@ -39,14 +40,14 @@ namespace BT
 
 	Status L_isCitizen::OnUpdate(float dt, NodeData* nodedata_ptr)
 	{
-		bool isCitizen = false;
 		AgentBTDataList& agentlist = g_trees.GetAllAgentsBTData();
 		for (auto& it : agentlist)
 		{
 			GameObject* go = it->GetGameObject();
-
+			if (go->GetType() == OBJECT_NPC)
+				return Status::BT_SUCCESS;
 		}
-		return Status::BT_RUNNING;
+		return Status::BT_FAILURE;
 	}
 
 	Status L_isCitizen::OnSuspend(NodeData* nodedata_ptr)

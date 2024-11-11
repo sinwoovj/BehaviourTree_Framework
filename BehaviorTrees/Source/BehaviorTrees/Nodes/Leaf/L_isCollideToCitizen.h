@@ -17,9 +17,22 @@ written consent of DigiPen Institute of Technology is prohibited.
 
 namespace BT
 {
+	// node data for L_isColliderToCitizen, InfectCitizen
+	struct L_CollideToCitizenData : public NodeAbstractData
+	{
+		GameObject* collideCitizen;		// collided citizen to infectee
+	};
+
 	// selector node
 	class L_isCollideToCitizen : public LeafNode
 	{
+	public:
+		// Get custom data.
+		L_CollideToCitizenData* GetLocalBlackBoard(NodeData* nodedata_ptr);
+
+		// Initial custom data.
+		void InitialLocalBlackBoard(NodeData* nodedata_ptr);
+
 	protected:
 		// Only run when initializing the node
 		virtual void OnInitial(NodeData* nodedata_ptr) override;

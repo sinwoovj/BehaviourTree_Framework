@@ -64,6 +64,58 @@ GameObject *BT::GetFarthestAgent(GameObject *npc)
 }
 
 /*--------------------------------------------------------------------------*
+Name:           GetNearestAgent
+
+Description:    Get nearest citizen from npc.
+
+Arguments:      npc:			npc object.
+
+Returns:        GameObject*:	pointer of the object of nearest citizen.
+*---------------------------------------------------------------------------*/
+
+GameObject* BT::GetNearestCitizen(GameObject* npc)
+{
+	float nearestDistance = 0.0f;
+	GameObject* nearestGameObject = nullptr;
+	objectID npc_id = npc->GetID();
+	dbCompositionList list;
+	g_database.ComposeList(list, OBJECT_NPC);
+
+	dbCompositionList::iterator i;
+	for (i = list.begin(); i != list.end(); ++i)
+	{
+		if ((*i)->GetID() != npc_id && (*i)->GetType() == OBJECT_NPC)
+		{
+			D3DXVECTOR3 npcPos = (*i)->GetBody().GetPos();
+			D3DXVECTOR3 myPos = npc->GetBody().GetPos();
+			D3DXVECTOR3 diff = npcPos - myPos;
+			float distance = D3DXVec3Length(&diff);
+
+			if (nearestGameObject)
+			{
+				if (distance < nearestDistance)
+				{
+					nearestDistance = distance;
+					nearestGameObject = *i;
+				}
+				else
+				{
+					if (nearestDistance <= 0.0f)
+						nearestDistance = distance;
+				}
+			}
+			else
+			{
+				nearestDistance = distance;
+				nearestGameObject = *i;
+			}
+		}
+	}
+
+	return nearestGameObject;
+}
+
+/*--------------------------------------------------------------------------*
 Name:           IsNear
 
 Description:    Check if the target is near the position.

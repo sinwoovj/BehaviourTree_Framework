@@ -20,7 +20,14 @@ namespace BT
 
 	Status L_isInfectee::OnUpdate(float dt, NodeData* nodedata_ptr)
 	{
-		return Status::BT_RUNNING;
+		AgentBTDataList& agentlist = g_trees.GetAllAgentsBTData();
+		for (auto& it : agentlist)
+		{
+			GameObject* go = it->GetGameObject();
+			if (go->GetType() == OBJECT_Enemy)
+				return Status::BT_SUCCESS;
+		}
+		return Status::BT_FAILURE;
 	}
 
 	Status L_isInfectee::OnSuspend(NodeData* nodedata_ptr)

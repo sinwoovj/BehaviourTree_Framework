@@ -20,7 +20,11 @@ namespace BT
 
 	Status L_infected::OnUpdate(float dt, NodeData* nodedata_ptr)
 	{
-		return Status::BT_RUNNING;
+		AgentBTData& agentdata = nodedata_ptr->GetAgentData();
+		GameObject* self = agentdata.GetGameObject();
+		if (self->GetType() == OBJECT_Enemy)
+			return Status::BT_SUCCESS;
+		return Status::BT_FAILURE;
 	}
 
 	Status L_infected::OnSuspend(NodeData* nodedata_ptr)
